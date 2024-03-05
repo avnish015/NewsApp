@@ -1,0 +1,127 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "DisplayStrings.ArticleDetails.description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description:"
+          }
+        }
+      }
+    },
+    "DisplayStrings.ArticleDetails.newsDetails" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "News Details"
+          }
+        }
+      }
+    },
+    "DisplayStrings.ArticleDetails.published" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Published: "
+          }
+        }
+      }
+    },
+    "DisplayStrings.ArticleDetails.source" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source: "
+          }
+        }
+      }
+    },
+    "DisplayStrings.ArticleDetails.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title: "
+          }
+        }
+      }
+    },
+    "DisplayStrings.ArticleList.errorTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to load data"
+          }
+        }
+      }
+    },
+    "DisplayStrings.ArticleList.newsList" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "News List"
+          }
+        }
+      }
+    },
+    "DisplayStrings.ArticleList.retry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retry"
+          }
+        }
+      }
+    },
+    "DisplayStrings.ArticleList.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "News"
+          }
+        }
+      }
+    },
+    "DisplayStrings.other.sampleFormatted" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Value is %d"
+          }
+        }
+      }
+    },
+    "DisplayStrings.other.unknownSource" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Source"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

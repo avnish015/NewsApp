@@ -1,0 +1,45 @@
+{
+    "status": "ok",
+    "totalResults": 12706,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Politiken.dk"
+            },
+            "author": "Author1",
+            "title": "Dørhåndtag på Teslas hypede Cybertruck vækker forundring",
+            "description": "Ved Cybertrucks lancering måtte Elon Musk vise forvirrede nye ejere, hvordan man kommer ind i bilen.",
+            "url": "https://politiken.dk/indland/forbrug/biler/art9650166/D%C3%B8rh%C3%A5ndtag-p%C3%A5-Teslas-hypede-Cybertruck-v%C3%A6kker-forundring",
+            "urlToImage": "https://politiken.dk/incoming/img9650183.1q0x7q/ALTERNATES/p16x9_960/FILE%20PHOTO%20Tesla%20store%20shows%20new%20Cybertruck%20in%20California",
+            "publishedAt": "2023-12-05T05:30:16Z",
+            "content": "Tesla længe ventede Cybertruck, elbilproducentens svar på den amerikanske pickup, er endelig på gaden. I hvert fald i USA. Men blot kort tid efter, at de første biler blev leveret i sidste uge, er fl… [+2062 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Www.dn.se"
+            },
+            "author": "Author2",
+            "title": "Fackförbund i Danmark varslar mot Tesla",
+            "description": "Danmarks största fackförbund varslar om konflikt med bilföretaget Tesla, skriver danska TV2.",
+            "url": "https://www.dn.se/direkt/2023-12-05/fackforbund-i-danmark-varslar-mot-tesla/",
+            "urlToImage": "https://cdn.dn-static.se/images/dn-black__c305c7680133f3d914c29c82231a02483.jpg",
+            "publishedAt": "2023-12-05T05:26:54Z",
+            "content": "Polisen har satt upp avspärrningar på platsen där en person hittats skottskadad. Foto: Jonas Lindkvist\r\nStrax innan 13-tiden larmades polis till Hägersten, södra Stockholm, sedan inringare hört skott… [+832 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Aftonbladet.se"
+            },
+            "author": "Author3",
+            "title": "Danmarks största fack hotar Tesla",
+            "description": "▸ Danmarks största fackförbund 3F Transport hotar med strejk mot Tesla. Facket vill stötta svenska IF Metall i konflikten…",
+            "url": "https://www.aftonbladet.se/nyheter/a/Rr77qd/aftonbladet-direkt?pinnedEntry=1195408",
+            "urlToImage": "https://images.aftonbladet-cdn.se/v2/images/156fc268-adec-4fec-ac17-baa7f1dbdb35?fit=crop&format=auto&h=56&q=50&w=100&s=8d717b112fa508073dcc3292ac8f7acfdc612d33",
+            "publishedAt": "2023-12-05T05:25:43Z",
+            "content": "TRE NYHETER DU INTE FÅR MISSA\r\n<ul><li>Danmarks största fack hotar Tesla\r\nDanmarks största fackförbund 3F Transport hotar med strejk mot Tesla. \r\nFacket vill stötta svenska IF Metall i konflikten med… [+13467 chars]"
+        }
+    ]
+}
