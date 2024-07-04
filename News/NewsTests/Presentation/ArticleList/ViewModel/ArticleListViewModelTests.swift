@@ -10,7 +10,6 @@ import PromiseKit
 import Combine
 @testable import News
 
-@MainActor
 final class ArticleListViewModelTests: XCTestCase {
 
     private var cancellables = [AnyCancellable]()
@@ -18,6 +17,7 @@ final class ArticleListViewModelTests: XCTestCase {
     override func setUp() {
     }
 
+    @MainActor
     func testSuccessResponse() async {
         let mockRepository = ArticleListDataRepositoryMock(shouldFail: false)
         let usecase = ArticleListUseCase(repository: mockRepository)
@@ -35,6 +35,7 @@ final class ArticleListViewModelTests: XCTestCase {
             await fulfillment(of: [expectation], timeout: 3)
     }
 
+    @MainActor
     func testFailureResponse() async {
         let mockRepository = ArticleListDataRepositoryMock(shouldFail: true)
         let usecase = ArticleListUseCase(repository: mockRepository)
