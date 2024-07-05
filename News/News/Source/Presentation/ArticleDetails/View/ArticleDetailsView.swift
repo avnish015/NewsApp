@@ -12,6 +12,7 @@ struct ArticleDetailsView: View {
 
     typealias Copy = DisplayStrings.ArticleDetails
 
+    @EnvironmentObject private var navigationManager: NavigationManager
     var viewModel: ArticleDetailsViewModelProtocol
 
     var body: some View {
@@ -45,15 +46,21 @@ struct ArticleDetailsView: View {
         }
         .navigationTitle(Copy.newsDetails)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    navigationManager.pop()
+                }) {
+                    Label(Copy.back, systemImage: Constant.leftArrow)
+                }
+            }
+        }
     }
 }
 
 #if DEBUG
-struct ArticleDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ArticleDetailsView(viewModel: ArticleDetailsViewModel(article: Article.sampleArticle))
-        }
+#Preview {
+        ArticleDetailsView(viewModel: ArticleDetailsViewModel(article: Article.sampleArticle))
     }
-}
 #endif

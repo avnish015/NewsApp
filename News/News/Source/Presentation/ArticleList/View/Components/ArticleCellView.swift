@@ -39,9 +39,6 @@ struct ArticleCellView: View {
 }
 
 #if DEBUG
-struct ArticleCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArticleCellView(viewModel: ArticleCellViewModel(article: Article.sampleArticle))
-    }
-}
+#Preview {
+    ArticleCellView(viewModel: ArticleCellViewModel(article: Article.sampleArticle))}
 #endif

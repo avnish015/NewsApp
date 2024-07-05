@@ -10,8 +10,8 @@ import SwiftUI
 struct ArticleListView<ViewModel>: View where ViewModel: ArticleListViewModelProtocol {
 
     typealias Copy = DisplayStrings.ArticleList
-
-    @EnvironmentObject var appDIContainer: AppDIContainer
+    
+    @EnvironmentObject private var navigationManager: NavigationManager
     @ObservedObject var viewModel: ViewModel
 
     init(viewModel: ViewModel) {
@@ -34,19 +34,21 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListViewModelPro
                 viewModel.refreshArticleList(showLoading: true)
             }
         }
+        .navigationTitle(Copy.title)
     }
 
     private func articleListView() -> some View {
         List {
             ForEach(viewModel.articleList) { article in
-                NavigationLink {
-                    appDIContainer.makeArticleDetailsView(article: article)
-                } label: {
-                    ArticleCellView(viewModel: viewModel.createArticleCellViewModel(for: article))
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityHint(article.accessabilityHint)
-                        .accessibilityIdentifier(Copy.ArticleCell.accessabilityIdentifier(title: article.title))
-                }
+                ArticleCellView(viewModel: viewModel.createArticleCellViewModel(for: article))
+                    .contentShape(Rectangle())
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityHint(article.accessabilityHint)
+                    .accessibilityIdentifier(Copy.ArticleCell.accessabilityIdentifier(title: article.title))
+                    .accessibilityAddTraits(.isButton)
+                    .onTapGesture {
+                        navigationManager.push(.articleDetails(article))
+                    }
             }
         }
         .refreshable {
@@ -55,7 +57,6 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListViewModelPro
         .accessibilityIdentifier(Copy.identifier)
         .listStyle(.plain)
         .listRowSeparator(.visible, edges: .all)
-        .navigationTitle(Copy.title)
         .padding(.all, 0)
     }
 
@@ -73,22 +74,20 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListViewModelPro
                 }
                 .accessibilityIdentifier(Copy.errorViewIdentifier)
             } else {
-                NetworkErrorView(description: description) {
+                NetworkErrorView(description: Copy.retry, buttonTitle: DisplayStrings.ArticleList.retry) {
                     viewModel.refreshArticleList(showLoading: true)
                 }
-                .accessibilityIdentifier(Copy.errorViewIdentifier)
             }
         }
     }
 }
 
-#if DEBUG
-struct ArticleListView_Previews: PreviewProvider {
 
-    static var previews: some View {
-        NavigationView {
-            ArticleListView(viewModel: AppDIContainer.preview.makeArticleListViewModel()).environmentObject(AppDIContainer.preview)
-        }
+#if DEBUG
+#Preview {
+    NavigationView {
+        let viewModel = try! AppDIContainer.shared.resolve(type: ArticleListViewModel.self)
+        ArticleListView(viewModel: viewModel)
     }
 }
 #endif

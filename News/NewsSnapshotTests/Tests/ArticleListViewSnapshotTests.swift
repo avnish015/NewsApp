@@ -21,7 +21,7 @@ final class ArticleListViewSnapshotTests: XCTestCase {
     }
 
     func testArticleListView() throws {
-        let articleListView = view.environmentObject(AppDIContainer.preview)
+        let articleListView = view
             .frame(width: UIScreen.main.bounds.width,
                    height: UIScreen.main.bounds.height)
         assertSnapshot(of: articleListView, as: .image)

@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct NetworkErrorView: View {
+
     var description: String
+    var buttonTitle: String?
     var callBack: (() -> Void)?
+
     var body: some View {
         VStack(spacing: 12) {
             VStack {
@@ -20,8 +23,10 @@ struct NetworkErrorView: View {
                 Text(description)
                     .foregroundColor(.gray)
             }
-            Button(DisplayStrings.ArticleList.retry) {
-                callBack?()
+            if let buttonTitle {
+                Button(buttonTitle) {
+                    callBack?()
+                }
             }
         }
         .font(.system(size: 15))
@@ -29,9 +34,7 @@ struct NetworkErrorView: View {
 }
 
 #if DEBUG
-struct NetworkErrorView_Previews: PreviewProvider {
-    static var previews: some View {
-        NetworkErrorView(description: DisplayStrings.ArticleList.errorTitle)
-    }
+#Preview {
+    NetworkErrorView(description: DisplayStrings.ArticleList.errorTitle, buttonTitle: DisplayStrings.ArticleList.retry)
 }
 #endif

@@ -8,61 +8,41 @@
 import Foundation
 import Kingfisher
 
-final class AppDIContainer: ObservableObject {
-    
-    let imageAuthenticationHandler = ImageAuthenticationHandler()
-
-    init() {
-        KingfisherManager.shared.downloader.authenticationChallengeResponder = imageAuthenticationHandler
+// MARK: - DIContainer
+class AppDIContainer {
+  
+  // MARK: - Shared
+  static let shared: AppDIContainer = .init()
+  
+  // MARK: - Preoperty
+  private var dependencies: [String: Any] = [:]
+  
+  // MARK: - Function
+  func register<T>(type: T.Type, dependency: T) {
+    let key = String(describing: type)
+    dependencies[key] = dependency
+  }
+  
+  func register<T, Arg>(type: T.Type, dependency: @escaping (Arg) -> T) {
+    let key = String(describing: type)
+    dependencies[key] = { (arg: Arg) in
+      return dependency(arg)
     }
-    
-    // MARK: - Use Cases
-    func makeArticleListUseCase() -> ArticleListUseCaseProtocol {
-        let repository = makeArticleListRepository()
-        return ArticleListUseCase(repository: repository)
+  }
+  
+  func resolve<T>(type: T.Type)throws -> T {
+    let key = String(describing: type)
+    guard let dependency = dependencies[key] as? T else {
+        throw NSError(domain: "com.Dependency.injection", code: -1, userInfo: [NSLocalizedDescriptionKey: "No Dependency found for - \(key), Application must be not register a dependency before resolving it."])
     }
-    
-    // MARK: - Repositories
-    func makeArticleListRepository() -> ArticleListRepositoryProtocol {
-        let service = makeArticleListService()
-        return ArticleListRepository(service: service)
-    }
-    
-    // MARK: - Service
-    func makeArticleListService() -> ArticleListServiceProtocol {
-        let authenticator = URLSessionTrustEvaluator()
-        let urlSession = URLSession(configuration: .default, delegate: authenticator, delegateQueue: nil)
-        let apiClient = URLSessionApiClient(session: urlSession)
-        return ArticleListService(apiClient: apiClient)
-    }
-    
-    // MARK: - Article List
-    func makeArticleListViewModel() -> ArticleListViewModel {
-        let useCase = makeArticleListUseCase()
-        return ArticleListViewModel(useCase: useCase)
-    }
-    
-    func makeArticleListView() -> ArticleListView<ArticleListViewModel>  {
-        let viewModel = makeArticleListViewModel()
-        return ArticleListView(viewModel: viewModel)
-
-    }
-    
-    //MARK: - Article Details
-    func makeArticleDetailsViewModel(with article: Article) -> ArticleDetailsViewModelProtocol {
-        return  ArticleDetailsViewModel(article: article)
-    }
-    
-    func makeArticleDetailsView(article: Article) -> ArticleDetailsView {
-        let viewModel = makeArticleDetailsViewModel(with: article)
-        return ArticleDetailsView(viewModel: viewModel)
+    return dependency
+  }
+  
+    func resolve<T, Arg>(type: T.Type, argument: Arg)throws -> T {
+        let key = String(describing: type)
+        guard let dependency = dependencies[key] as? (Arg) -> T else {
+            throw NSError(domain: "com.Dependency.injection", code: -1, userInfo: [NSLocalizedDescriptionKey: "No Dependency found for - \(key), Application must be not register a dependency before resolving it."])
+        }
+        return dependency(argument)
     }
 }
-
-#if DEBUG
-extension AppDIContainer {
-    static var preview: Self {
-        .init()
-    }
-}
-#endif

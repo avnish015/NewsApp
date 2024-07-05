@@ -11,4 +11,5 @@ public struct Constant {
     static let apiKey = "17cf1b333e964cea91e89e1e824bd366"
     static let newDateFormat = "dd-MM-YYYY"
     static let oldDateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    static let leftArrow = "arrow.left"
 }

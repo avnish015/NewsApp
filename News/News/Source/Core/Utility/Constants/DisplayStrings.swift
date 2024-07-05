@@ -30,6 +30,7 @@ enum DisplayStrings {
         static let description = "DisplayStrings.ArticleDetails.description".localized
         static let newsDetails = "DisplayStrings.ArticleDetails.newsDetails".localized
         static let title = "DisplayStrings.ArticleDetails.title".localized
+        static let back = "DisplayStrings.ArticleDetails.back".localized
         static let defaultImageIdentifier = "Default Image"
         static func imageViewIdentifier(url: URL?) -> String {
             return "Image with URL \(url?.absoluteString ?? "")"
@@ -38,6 +39,7 @@ enum DisplayStrings {
 
     enum Other {
         static let sampleFormatted = "DisplayStrings.other.sampleFormatted".localized
+        static let dependencyNotRegistered = "DisplayStrings.Other.dependencyNotRegistered".localized
         static let unknownSource = "DisplayStrings.other.unknownSource".localized
     }
 }

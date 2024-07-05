@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "DisplayStrings.ArticleDetails.back" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        }
+      }
+    },
     "DisplayStrings.ArticleDetails.description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -96,6 +107,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "News"
+          }
+        }
+      }
+    },
+    "DisplayStrings.Other.dependencyNotRegistered" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Application must be not register a dependency before resolving it."
           }
         }
       }
