@@ -74,7 +74,7 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListViewModelPro
                 }
                 .accessibilityIdentifier(Copy.errorViewIdentifier)
             } else {
-                NetworkErrorView(description: Copy.retry, buttonTitle: DisplayStrings.ArticleList.retry) {
+                ErrorView(description: Copy.retry, buttonTitle: DisplayStrings.ArticleList.retry) {
                     viewModel.refreshArticleList(showLoading: true)
                 }
             }

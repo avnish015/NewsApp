@@ -47,6 +47,7 @@
 		5F645DF72B571E3700763FA2 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F645DF62B571E3700763FA2 /* HTTPError.swift */; };
 		5F645DF92B571ECE00763FA2 /* NetworkResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F645DF82B571ECE00763FA2 /* NetworkResource.swift */; };
 		5F645E012B57249000763FA2 /* EndPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F645E002B57249000763FA2 /* EndPoint+Extension.swift */; };
+		5F8067482C383F9700DECAB2 /* ErrorViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F565ADD2B555D6E00F7AC13 /* ErrorViewSnapshotTests.swift */; };
 		5F8202BC2B7B40B70016B59B /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8202BB2B7B40B70016B59B /* AppDIContainer.swift */; };
 		5F8638AA2B584BEE00B02F35 /* MockResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8638A92B584BEE00B02F35 /* MockResource.swift */; };
 		5F8638AC2B584CFD00B02F35 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F07C8922B219CC000183CA8 /* Bundle+Extension.swift */; };
@@ -58,7 +59,7 @@
 		5FB694332C37B5A500E808F6 /* AppNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB694322C37B5A500E808F6 /* AppNavigationView.swift */; };
 		5FB694352C37B6DD00E808F6 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB694342C37B6DD00E808F6 /* NavigationManager.swift */; };
 		5FB694372C37D6A300E808F6 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB694362C37D6A300E808F6 /* AppConfiguration.swift */; };
-		5FB694382C3821BE00E808F6 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F565ADB2B55188500F7AC13 /* NetworkErrorView.swift */; };
+		5FB694382C3821BE00E808F6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F565ADB2B55188500F7AC13 /* ErrorView.swift */; };
 		5FC365402B3ED98A00BD9EB7 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5FC3653F2B3ED98A00BD9EB7 /* PromiseKit */; };
 		5FC365432B44970200BD9EB7 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC365422B44970200BD9EB7 /* Image+Extension.swift */; };
 		5FC365452B45603900BD9EB7 /* TestHttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC365442B45603900BD9EB7 /* TestHttpError.swift */; };
@@ -178,8 +179,8 @@
 		5F38524A2B738C560028915D /* ArticleCellViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellViewModelMock.swift; sourceTree = "<group>"; };
 		5F38524C2B738D4A0028915D /* ArticleDetailsViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsViewModelMock.swift; sourceTree = "<group>"; };
 		5F38524F2B7391670028915D /* ArticleDomainModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDomainModelTests.swift; sourceTree = "<group>"; };
-		5F565ADB2B55188500F7AC13 /* NetworkErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
-		5F565ADD2B555D6E00F7AC13 /* NetworkErrorViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorViewSnapshotTests.swift; sourceTree = "<group>"; };
+		5F565ADB2B55188500F7AC13 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		5F565ADD2B555D6E00F7AC13 /* ErrorViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewSnapshotTests.swift; sourceTree = "<group>"; };
 		5F565ADF2B55602300F7AC13 /* AppLaunchArgument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchArgument.swift; sourceTree = "<group>"; };
 		5F565AE42B558C2700F7AC13 /* DisplayStringsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayStringsTests.swift; sourceTree = "<group>"; };
 		5F645DE12B56B96200763FA2 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -751,7 +752,7 @@
 				5FC5A15B2B23119800218AB3 /* ArticleCellSnapshotTests.swift */,
 				5FFB89BF2B233CA9000C2FC7 /* ArticleDetailsViewSnapshotTests.swift */,
 				5FFB89C22B2340C7000C2FC7 /* ArticleListViewSnapshotTests.swift */,
-				5F565ADD2B555D6E00F7AC13 /* NetworkErrorViewSnapshotTests.swift */,
+				5F565ADD2B555D6E00F7AC13 /* ErrorViewSnapshotTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -759,7 +760,7 @@
 		5FDDA1612B579A800023B5F5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5F565ADB2B55188500F7AC13 /* NetworkErrorView.swift */,
+				5F565ADB2B55188500F7AC13 /* ErrorView.swift */,
 				5F07C86F2B1FAEEB00183CA8 /* ArticleCellView.swift */,
 			);
 			path = Components;
@@ -1126,7 +1127,7 @@
 				5F07C87C2B204C0C00183CA8 /* ArticleDetailsViewModel.swift in Sources */,
 				5FDDA16D2B57A46E0023B5F5 /* ArticleDataModel.swift in Sources */,
 				5FFB89CF2B29B3B4000C2FC7 /* ArticleListRepository.swift in Sources */,
-				5FB694382C3821BE00E808F6 /* NetworkErrorView.swift in Sources */,
+				5FB694382C3821BE00E808F6 /* ErrorView.swift in Sources */,
 				5FCB91462B6FA0B10095ABFA /* ArticleListRepositoryProtocol.swift in Sources */,
 				5F07C8392B1F639E00183CA8 /* NewsApp.swift in Sources */,
 				5FDDA1652B579CE40023B5F5 /* ArticleListUseCase.swift in Sources */,
@@ -1195,6 +1196,7 @@
 				5F38524D2B738D4A0028915D /* ArticleDetailsViewModelMock.swift in Sources */,
 				5FFB89C02B233CA9000C2FC7 /* ArticleDetailsViewSnapshotTests.swift in Sources */,
 				5FC5A15C2B23119800218AB3 /* ArticleCellSnapshotTests.swift in Sources */,
+				5F8067482C383F9700DECAB2 /* ErrorViewSnapshotTests.swift in Sources */,
 				5F38524B2B738C560028915D /* ArticleCellViewModelMock.swift in Sources */,
 				5FFB89C32B2340C7000C2FC7 /* ArticleListViewSnapshotTests.swift in Sources */,
 				5FFB89C62B2344B3000C2FC7 /* MockArticleListResource.swift in Sources */,

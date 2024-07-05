@@ -31,14 +31,14 @@ struct AppNavigationView: View {
             if let viewModel = try? AppDIContainer.shared.resolve(type: ArticleListViewModel.self) {
                 ArticleListView(viewModel: viewModel)
             } else {
-                NetworkErrorView(description: DisplayStrings.Other.dependencyNotRegistered)
+                ErrorView(description: DisplayStrings.Other.dependencyNotRegistered)
             }
         case .articleDetails(let article):
             if let viewModel = try? AppDIContainer.shared.resolve(type: ArticleDetailsViewModel.self, argument: article) {
                 ArticleDetailsView(viewModel: viewModel)
                     .environmentObject(navigationManager)
             } else {
-                NetworkErrorView(description: DisplayStrings.Other.dependencyNotRegistered)
+                ErrorView(description: DisplayStrings.Other.dependencyNotRegistered)
             }
         }
     }
