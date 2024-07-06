@@ -18,7 +18,8 @@ final class NewsUITestsLaunchTests: XCTestCase {
     }
 
     func testLaunch() throws {
-        App.launch(argument: "isTestSuccess")
+        
+        App.launch()
 
         let attachment = XCTAttachment(screenshot: App.app.screenshot())
         attachment.name = "Launch Screen"

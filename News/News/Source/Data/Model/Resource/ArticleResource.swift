@@ -21,7 +21,7 @@ final class ArticleResource: NetworkResource {
         self.queryParameters = queryParameters
     }
 
-    func response<T: Decodable>(type: T.Type, data: Data?, response: URLResponse?) -> Swift.Result<T, HTTPError> {
+    func decode<T: Decodable>(type: T.Type, data: Data?, response: URLResponse?) -> Swift.Result<T, HTTPError> {
         if let response = response as? HTTPURLResponse, let data = data {
             if response.statusCode <= 300 {
                 let decoder = JSONDecoder()

@@ -14,7 +14,7 @@ protocol NetworkResource {
     var timeoutInterval: Double { get }
     var queryParameters: [String: Any]? { get }
     var contentType: String { get }
-    func response<T: Decodable>(type: T.Type, data: Data?, response: URLResponse?) -> Swift.Result<T, HTTPError>
+    func decode<T: Decodable>(type: T.Type, data: Data?, response: URLResponse?) -> Swift.Result<T, HTTPError>
 }
 
 extension NetworkResource {

@@ -9,15 +9,14 @@ import Foundation
 import Kingfisher
 
 protocol AppConfigurationProtocol {
-    var imageAuthenticationHandler: ImageAuthenticationHandler { get }
     func urlSession() -> URLSession
 }
 
 class AppConfiguration: AppConfigurationProtocol {
 
-    let imageAuthenticationHandler = ImageAuthenticationHandler()
+    private let imageAuthenticationHandler = ImageAuthenticationHandler()
 
-    required init() {
+    init() {
         KingfisherManager.shared.downloader.authenticationChallengeResponder = imageAuthenticationHandler
     }
     

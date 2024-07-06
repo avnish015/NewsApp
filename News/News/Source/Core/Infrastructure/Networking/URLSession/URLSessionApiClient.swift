@@ -24,7 +24,7 @@ final class URLSessionApiClient: ApiClient {
                 return
             }
             session.dataTask(with: urlRequest) {data, response, error in
-                switch resource.response(type: responseType, data: data, response: response) {
+                switch resource.decode(type: responseType, data: data, response: response) {
                     case .success(let data):
                         return seal.fulfill(data)
                     case .failure(let error):

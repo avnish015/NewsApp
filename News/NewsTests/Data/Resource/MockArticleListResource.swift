@@ -20,7 +20,7 @@ final class MockArticleListResource: NetworkResource, MockResource {
         self.resourceName = resourceName
     }
 
-    func response<T>(type: T.Type, data: Data?, response: URLResponse?) -> Result<T, HTTPError> where T : Decodable {
+    func decode<T>(type: T.Type, data: Data?, response: URLResponse?) -> Result<T, HTTPError> where T : Decodable {
         if let data = data {
             let decoder = JSONDecoder()
             do {

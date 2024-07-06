@@ -8,14 +8,17 @@
 import XCTest
 
 class App {
+
     static var app = {
         let app = XCUIApplication()
         app.launchArguments.append("isTesting")
         return app
     }()
 
-    static func launch(argument: String) {
-        app.launchArguments.append(argument)
+    static func launch(argument: String? = nil) {
+        if let argument {
+            app.launchArguments.append(argument)
+        }
         app.launch()
     }
 

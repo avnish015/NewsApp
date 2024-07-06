@@ -13,7 +13,7 @@ final class MockApiClient: ApiClient {
     func callApi<T: Decodable>(responseType: T.Type, resource: NetworkResource) -> Promise<T> {
         return Promise<T> { seal in
 
-            switch resource.response(type: T.self,
+            switch resource.decode(type: T.self,
                                      data: try? Data(contentsOf: resourceURL(for: resource)!),
                                      response: nil) {
             case .success(let response):

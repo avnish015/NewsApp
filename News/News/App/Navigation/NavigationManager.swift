@@ -12,7 +12,6 @@ import SwiftUI
 // MARK: - RouteProtocol
 protocol RouteProtocol: Hashable, Identifiable {
   var id: String { get }
-  var params: Any? { get }
 }
 
 // MARK: - Route
@@ -27,15 +26,6 @@ enum Route: RouteProtocol {
       return "ArticleList"
     case .articleDetails:
       return "ArticleDetails"
-    }
-  }
-  
-  var params: Any? {
-    switch self {
-    case .articleList:
-      return nil
-    case .articleDetails(let article):
-      return article
     }
   }
 }
