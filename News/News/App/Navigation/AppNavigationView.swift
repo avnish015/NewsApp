@@ -36,7 +36,6 @@ struct AppNavigationView: View {
         case .articleDetails(let article):
             if let viewModel = try? AppDIContainer.shared.resolve(type: ArticleDetailsViewModel.self, argument: article) {
                 ArticleDetailsView(viewModel: viewModel)
-                    .environmentObject(navigationManager)
             } else {
                 ErrorView(description: DisplayStrings.Other.dependencyNotRegistered)
             }

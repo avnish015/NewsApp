@@ -25,9 +25,7 @@ struct NewsApp: App {
 
     var body: some Scene {
         return WindowGroup {
-            NavigationStack {
-                AppNavigationView()
-            }
+            AppNavigationView()
         }
     }
     
